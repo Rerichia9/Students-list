@@ -1,0 +1,264 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+*:focus {
+    outline: none;
+}
+
+h1, h2, h3, p, ul, figure {
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-family: 'Harabara', sans-serif;
+    letter-spacing: 2px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.btn-reset {
+    padding: 0;
+    border: none;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.list-reset {
+    list-style: none;
+}
+
+/* @font-face {
+    font-family: 'Montserrat';
+    src: local('MontserratRegular'),
+        url(../fonts/Montserrat-Regular.woff2) format('woff2'),
+        url(../fonts/Montserrat-Regular.woff) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('MontserratBold'),
+        url(../fonts/Montserrat-Bold.woff2) format('woff2'),
+        url(../fonts/Montserrat-Bold.woff) format('woff');
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('MontserratMedium'),
+        url(../fonts/Montserrat-Medium.woff2) format('woff2'),
+        url(../fonts/Montserrat-Medium.woff) format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('MontserratSemibold'),
+        url(../fonts/Montserrat-SemiBold.woff2) format('woff2'),
+        url(../fonts/Montserrat-SemiBold.woff) format('woff');
+    font-weight: 600;
+    font-style: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: local('MontserratExtrabold'),
+        url(../fonts/Montserrat-ExtraBold.woff2) format('woff2'),
+        url(../fonts/Montserrat-ExtraBold.woff) format('woff');
+    font-weight: 800;
+    font-style: bold;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Harabara';
+    src: local('Harabara'),
+        url(../fonts/Harabara.woff2) format('woff2'),
+        url(../fonts/Harabara.woff) format('woff');
+    font-weight: 700;
+    font-style: bold;
+    font-display: swap;
+} */
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--white-color);
+}
+
+.container {
+    margin: 0 120px;
+}
+
+.workersTable {
+    width: 100%;
+    margin-bottom: 20px;
+    border: 15px solid black;
+    border-top: 5px solid black;
+    border-collapse: collapse;
+}
+
+.workersTable th {
+    font-weight: bold;
+    padding: 5px;
+    background: black;
+    border: none;
+    border-bottom: 5px solid black;
+    color: white;
+    cursor: pointer;
+}
+
+.workersTable th:hover {
+    color: yellow;
+    transition: .3s ease-in;
+}
+
+.workersTable td {
+    padding: 5px;
+    border: none;
+    border-bottom: 5px solid black;
+    text-align: center;
+}
+
+#add-worker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-worker__input {
+    margin-bottom: 5px;
+    padding: 7px 5px;
+    border-radius: 5px;
+    background-color: #E5E5E5;
+    border: 2px solid transparent;
+    font-weight: 500;
+    font-size: 18px;
+    color: #89909F;
+    width: 330px;
+}
+
+.add-worker__input:active,
+.add-worker__input:focus {
+    border: 2px solid tomato;
+    transition: .2s ease;
+}
+
+.add-worker__input:focus {
+    outline: none;
+}
+
+.add-worker__btn {
+    padding: 10px 15px;
+    max-width: 100%;
+    background-color: tomato;
+    color: yellow;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.add-worker__btn:hover {
+    background-color: black;
+    transition: .2s ease-in;
+}
+
+/* pop-up */
+.pop-up {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.418);
+    top: 0;
+    left: 0;
+}
+
+.pop-up.active {
+    display: block;
+}
+
+.pop-up__body {
+    margin: auto;
+    background-color: #FFFFFF;
+    padding: 50px 80px;
+    position: relative;
+    text-align: center;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.pop-up__container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.pop-up__text {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.pop-up__close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 20px;
+    color: #000;
+    background-color: transparent;
+}
+
+.pop-up__close:focus-visible,
+.pop-up__close:hover {
+    transform: rotate(180deg);
+    transition: .15s ease-out;
+}
+
+.pop-up__open {
+    font-size: 18px;
+    color: yellow;
+    background: tomato;
+    border-radius: 5px;
+    padding: 8px 15px;
+    text-decoration: none;
+    border: none;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+.pop-up__open:focus-visible,
+.pop-up__open:hover {
+    background-color: black;
+    transition: .2s ease-in-out;
+}
+
+.tippy-box[data-theme~='tomato'] {
+    background-color: tomato;
+    color: yellow;
+}
+
+.tippy-box[data-theme~='tomato'][data-placement^='top']>.tippy-arrow::before {
+    border-top-color: tomato;
+}

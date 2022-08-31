@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="main">
+        <div class="container">
+
+            <button class="pop-up__open" id="open">Добавить нового студента</button>
+
+            <div class="pop-up" id="body">
+                <div class="pop-up__container">
+                    <div class="pop-up__body">
+                        <p class="pop-up__text">Добавить нового студента</p>
+                        <form action="" id="add-worker">
+                            <input required class="add-worker__input" type="text" placeholder="Имя" id="input-name">
+                            <input required class="add-worker__input" type="text" placeholder="Фамилия"
+                                id="input-surname">
+                            <input required class="add-worker__input" type="text" placeholder="Отчество"
+                                id="input-lastname">
+                            <input required class="add-worker__input" type="number" placeholder="Год начала обучения"
+                                id="input-workStart" min="2000">
+                            <input required class="add-worker__input" type="date" id="input-birthDate" min="1900-01-01"
+                                max="2022-08-23">
+                            <input required class="add-worker__input" type="text" placeholder="Факультет"
+                                id="input-post">
+                            <button class="add-worker__btn">Добавить</button>
+                        </form>
+                        <button id="close" class="btn-reset pop-up__close">X</button>
+                    </div>
+                </div>
+            </div>
+
+            <table class="workersTable">
+                <thead>
+                    <th class="workersTable__th" data-column="fio">ФИО</th>
+                    <th class="workersTable__th" data-column="birthDate">Дата рождения</th>
+                    <th class="workersTable__th" data-column="workStart">Год начала обучения</th>
+                    <th class="workersTable__th" data-column="post">Факультет</th>
+                </thead>
+                <tbody id="workers-list"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
